@@ -1,0 +1,99 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.header {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+.header h2 {
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.messageList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.messageCard {
+    background: white;
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    position: relative;
+    transition: box-shadow 0.2s;
+}
+
+.messageCard:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.senderInfo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.senderInfo h4 {
+    margin: 0;
+    color: var(--text-main);
+    font-size: 1.1rem;
+}
+
+.roleLabel {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    background: var(--bg-color);
+    padding: 0.1rem 0.5rem;
+    border-radius: 12px;
+}
+
+.messageContent {
+    color: var(--text-main);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.replyButton {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.replyButton:hover {
+    background: var(--primary-color);
+    color: white;
+}

@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  role      String   @default("USER") // USER (Arsa Sahibi), CONTRACTOR (Müteahhit)
+  createdAt DateTime @default(now())
+  
+  reports         Report[]
+  sentMessages    Message[] @relation("SentMessages")
+  receivedMessages Message[] @relation("ReceivedMessages")
+}
+
+model Report {
+  id               String   @id @default(cuid())
+  title            String
+  totalApartments  Int
+  apartmentSizeSqm Float
+  luxLevelModifier Float
+  landShareRatio   Float
+  minApartmentPrice Float
+  landCost         Float
+  
+  userId           String
+  user             User     @relation(fields: [userId], references: [id])
+  
+  createdAt        DateTime @default(now())
+}
+
+model Message {
+  id        String   @id @default(cuid())
+  content   String
+  reportId  String?  // İlgili hesaplama raporuna referans
+  
+  senderId  String
+  sender    User     @relation("SentMessages", fields: [senderId], references: [id])
+  
+  receiverId String
+  receiver   User     @relation("ReceivedMessages", fields: [receiverId], references: [id])
+  
+  createdAt DateTime @default(now())
+}

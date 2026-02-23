@@ -1,0 +1,263 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    margin-bottom: 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+}
+
+.logoIcon {
+    font-size: 1.5rem;
+}
+
+.main {
+    display: flex;
+    gap: 2rem;
+    flex: 1;
+}
+
+.calculatorSection {
+    flex: 2;
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.settingsSection {
+    flex: 1;
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.settingsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.settingsHeader h3 {
+    color: var(--text-main);
+    font-size: 1.1rem;
+}
+
+/* --- Yeni Eklenen Grid ve Dashboard Stilleri --- */
+
+.leftPanel {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.rightPanel {
+    flex: 1.5;
+}
+
+.settingsGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.settingsGroup h4 {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.luxGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+.luxBox {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    background: white;
+    transition: all 0.2s;
+}
+
+.luxBoxActive {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 10px rgba(43, 95, 225, 0.3);
+}
+
+.buildingIcon {
+    font-size: 1.5rem;
+}
+
+.stepperInput {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: white;
+}
+
+.stepperInput button {
+    background: var(--bg-color);
+    border: none;
+    padding: 0.8rem 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--text-main);
+}
+
+.stepperInput input {
+    flex: 1;
+    text-align: center;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    outline: none;
+}
+
+.stepperInput span {
+    padding-right: 1rem;
+    color: var(--text-muted);
+}
+
+/* Ana Sonuç Kartı Stilleri */
+.resultCardMain {
+    background: linear-gradient(135deg, var(--bg-color) 0%, #ffffff 100%);
+}
+
+.mainPriceBox {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1d4ed8 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.mainPriceBox::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.mainPriceBox h5 {
+    font-weight: 400;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.mainPriceBox h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+}
+
+.mainPriceBox h2 span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.sqmPrice {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.secondaryStatsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.statBox {
+    background: white;
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+}
+
+.statBox h5 {
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.statValue {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.2rem;
+}
+
+.statValue span {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.statSubText {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.actionButtons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1024px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .leftPanel,
+    .calculatorSection,
+    .rightPanel {
+        flex: none;
+        width: 100%;
+    }
+}
